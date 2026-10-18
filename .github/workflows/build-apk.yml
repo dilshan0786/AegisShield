@@ -22,14 +22,13 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-
     - name: Grant Execute Permission to gradlew
       run: chmod +x mobile-android/gradlew
 
     - name: Build Debug APK
       working-directory: mobile-android
+      env:
+        ANDROID_HOME: /usr/local/lib/android/sdk
       run: ./gradlew assembleDebug --no-daemon --stacktrace
 
     - name: Upload APK Artifact
