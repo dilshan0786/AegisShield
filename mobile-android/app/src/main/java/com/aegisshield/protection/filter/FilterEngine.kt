@@ -29,18 +29,12 @@ class FilterEngine(private val context: Context) {
         "sex tape", "rule34", "masturbation video", "desisex", "indian porn", "bhabhi sex"
     )
 
-    fun isDomainBlocked(domain: String?): Boolean {
-        if (domain.isNullOrBlank()) return false
-        val cleanDomain = domain.lowercase(Locale.ROOT).trim().replace("www.", "")
-        
-        // Exact match
-        if (adultDomains.contains(cleanDomain)) return true
+    fun isDomainBlocked(text: String?): Boolean {
+        if (text.isNullOrBlank()) return false
+        val clean = text.lowercase(Locale.ROOT)
 
-        // Subdomain check
-        for (blocked in adultDomains) {
-            if (cleanDomain.endsWith(".$blocked")) {
-                return true
-            }
+        for (domain in adultDomains) {
+            if (clean.contains(domain)) return true
         }
         return false
     }
@@ -51,21 +45,17 @@ class FilterEngine(private val context: Context) {
 
         for (kw in explicitKeywords) {
             if (kw.length < 3) continue
-            // Regex word boundary ensures we match whole words, not partial sub-words
             val pattern = Regex("\\b${Regex.escape(kw)}\\b", RegexOption.IGNORE_CASE)
-            if (pattern.containsMatchIn(cleanText)) {
+            if (pattern.containsMatchIn(cleanText) || (kw.length >= 4 && cleanText.contains(kw))) {
                 return true
             }
         }
 
-        // Domain root check (e.g. "pornhub", "xvideos", "xnxx") with word boundaries
+        // Domain root check (e.g. "pornhub", "xvideos", "xnxx")
         for (domain in adultDomains) {
             val root = domain.substringBeforeLast(".")
-            if (root.length >= 4) {
-                val pattern = Regex("\\b${Regex.escape(root)}\\b", RegexOption.IGNORE_CASE)
-                if (pattern.containsMatchIn(cleanText)) {
-                    return true
-                }
+            if (root.length >= 4 && cleanText.contains(root)) {
+                return true
             }
         }
 
