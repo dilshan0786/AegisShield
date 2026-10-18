@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AegisShield - Adult Content Protection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-wrapper">
+          <img src="../assets/icon.png" alt="AegisShield Logo" class="brand-logo">
+          <div class="status-glow"></div>
+        </div>
+        <div class="brand-text">
+          <h2>AegisShield</h2>
+          <span class="badge-version">v1.0.0 PRO</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-tab="overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-item" data-tab="rules">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Filter Rules</span>
+        </button>
+        <button class="nav-item" data-tab="security">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Password & Lock</span>
+        </button>
+        <button class="nav-item" data-tab="logs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Threat Audit Logs</span>
+        </button>
+        <button class="nav-item text-danger" data-tab="deactivate">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+          <span>Uninstall & Deactivate</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="tamper-lock-indicator">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-details">
+            <span class="lock-title">Tamper Lock</span>
+            <span class="lock-subtitle">Master Password Armed</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="system-status-indicator" id="systemStatusBanner">
+          <span class="pulse-dot"></span>
+          <span class="status-label">SYSTEM ARMED & SECURE</span>
+        </div>
+        <div class="top-actions">
+          <button class="btn btn-warning-outline" id="btnTestNudityShield" title="Conceals explicit visual scenes in movies and videos (HotKey: Ctrl+Shift+B)">
+            <span class="badge-tag">Ctrl+Shift+B</span>
+            <span>🛡️ Cinema Nudity Shield</span>
+          </button>
+          <button class="btn btn-secondary" id="btnSyncFilters">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Sync System Rules
+          </button>
+          <button class="btn btn-danger-outline" id="btnExitApp">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Lock & Exit
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB: Overview / Dashboard -->
+      <section class="tab-pane active" id="tab-overview">
+        <!-- Hero Protection Banner -->
+        <div class="shield-hero-card">
+          <div class="hero-content">
+            <div class="shield-badge">CROSS-PLATFORM SHIELD ENGINE</div>
+            <h1 class="hero-title">Adult & Explicit Content Blocker</h1>
+            <p class="hero-desc">
+              Multi-tiered defense actively neutralizing adult web traffic, search engine explicit content, and window titles across all browsers and apps.
+            </p>
+            <div class="hero-switches">
+              <div class="toggle-pill active" id="mainProtectionToggle">
+                <span class="toggle-icon">🛡️</span>
+                <span class="toggle-text">Active Protection</span>
+                <span class="status-tag">ENABLED</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-graphic">
+            <div class="shield-pulse-ring"></div>
+            <img src="../assets/icon.png" alt="AegisShield" class="pulsing-shield">
+          </div>
+        </div>
+
+        <!-- Metric Stat Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Threats Intercepted</span>
+              <span class="stat-badge alert">BLOCKED</span>
+            </div>
+            <div class="stat-value" id="statBlockedCount">0</div>
+            <div class="stat-subtext" id="statLastBlocked">No threats detected today</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Enforced Block Rules</span>
+              <span class="stat-badge success">ACTIVE</span>
+            </div>
+            <div class="stat-value" id="statRulesCount">60,000+</div>
+            <div class="stat-subtext">Adult Domains & Search Patterns</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">SafeSearch Engine</span>
+              <span class="stat-badge info">STRICT</span>
+            </div>
+            <div class="stat-value">FORCED</div>
+            <div class="stat-subtext">Google, Bing, YouTube & DuckDuckGo</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Watchdog Guard</span>
+              <span class="stat-badge pulse">REAL-TIME</span>
+            </div>
+            <div class="stat-value">RUNNING</div>
+            <div class="stat-subtext">Window Titles & Process Inspector</div>
+          </div>
+        </div>
+
+        <!-- Recent Threats Stream -->
+        <div class="panel card">
+          <div class="panel-header">
+            <h3>Live Threat Intercept Activity</h3>
+            <span class="panel-tag">Real-Time Monitor</span>
+          </div>
+          <div class="threat-list" id="recentThreatsList">
+            <div class="empty-state">
+              <div class="empty-icon">✨</div>
+              <p>System clean. No active adult attempts intercepted in this session.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: Filter Rules -->
+      <section class="tab-pane" id="tab-rules">
+        <div class="panel card">
+          <div class="panel-header">
+            <div>
+              <h3>System Filtering Policies</h3>
+              <p class="panel-desc">All modifications require Master Password authorization.</p>
+            </div>
+          </div>
+
+          <div class="rules-options">
+            <div class="rule-option-card">
+              <div class="rule-info">
+                <h4>System-Wide Hosts Filter</h4>
+                <p>Redirects all 60,000+ known adult domains to loopback address (0.0.0.0). System-wide for all browsers and network tools.</p>
+              </div>
+              <input type="checkbox" id="checkHostsFilter" checked disabled>
+            </div>
+
+            <div class="rule-option-card">
+              <div class="rule-info">
+                <h4>Forced SafeSearch Enforcement</h4>
+                <p>Locks strict adult filtering on Google, Bing, YouTube (Restricted Mode), and DuckDuckGo via DNS CNAME spoofing.</p>
+              </div>
+              <input type="checkbox" id="checkSafeSearch" checked disabled>
+            </div>
+
+            <div class="rule-option-card">
+              <div class="rule-info">
+                <h4>Real-Time Window & App Watchdog</h4>
+                <p>Instantly terminates any application or browser tab displaying explicit keywords or pornographic titles.</p>
+              </div>
+              <input type="checkbox" id="checkWatchdog" checked disabled>
+            </div>
+
+            <div class="rule-option-card cinema-card" style="flex-direction: column; align-items: stretch; gap: 14px; border-color: rgba(245, 158, 11, 0.3);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="rule-info">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <h4>🎬 Smart Cinema & Video Nudity Shield (Auto-Sensing)</h4>
+                    <span class="badge-tag" style="background: rgba(16, 185, 129, 0.2); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.4);">No Password Required</span>
+                  </div>
+                  <p>Automatically senses explicit or nude scenes in downloaded movies, media players (VLC, MPC, Windows Media Player) and browser video windows. Automatically activates protection without manual hotkeys.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="checkCinemaShield" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <!-- Mode Selection -->
+              <div class="cinema-mode-selector" style="display: flex; gap: 10px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: var(--radius-md); align-items: center; flex-wrap: wrap;">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-right: 6px;">Protection Mode:</span>
+                <label class="mode-pill active" id="labelModeBoth" style="cursor: pointer;">
+                  <input type="radio" name="cinemaMode" value="both" id="radioModeBoth" checked style="display: none;">
+                  <span>🛡️ Full Shield (Black Screen Video + Mute Audio)</span>
+                </label>
+                <label class="mode-pill" id="labelModeVideo" style="cursor: pointer;">
+                  <input type="radio" name="cinemaMode" value="video_only" id="radioModeVideo" style="display: none;">
+                  <span>🎬 Video Only (Black Screen, Audio Plays)</span>
+                </label>
+                <label class="mode-pill" id="labelModeAudio" style="cursor: pointer;">
+                  <input type="radio" name="cinemaMode" value="audio_only" id="radioModeAudio" style="display: none;">
+                  <span>🔇 Audio Only (Mute Audio, Video Plays)</span>
+                </label>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-dim);">
+                <span>Tip: When the black screen appears, click the top-right ✖ button or press ESC to uncover instantly.</span>
+                <button class="btn btn-secondary btn-sm" id="btnTriggerOverlayRule">Test Shield Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="custom-lists-section">
+            <h4>Add Custom Blocked Domain</h4>
+            <div class="input-action-group">
+              <input type="text" id="inputCustomDomain" placeholder="example-adult-domain.com" class="form-input">
+              <button class="btn btn-primary" id="btnAddDomain">Add Domain</button>
+            </div>
+            <div class="chip-container" id="customDomainsContainer"></div>
+          </div>
+
+          <div class="custom-lists-section mt-4">
+            <h4>Add Custom Explicit Keyword / Search Term</h4>
+            <div class="input-action-group">
+              <input type="text" id="inputCustomKeyword" placeholder="Enter keyword to auto-kill window" class="form-input">
+              <button class="btn btn-primary" id="btnAddKeyword">Add Keyword</button>
+            </div>
+            <div class="chip-container" id="customKeywordsContainer"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: Password & Security -->
+      <section class="tab-pane" id="tab-security">
+        <div class="panel card">
+          <div class="panel-header">
+            <div>
+              <h3>Master Password & Tamper Lock</h3>
+              <p class="panel-desc">Without your Master Password, AegisShield cannot be disabled, closed, or removed.</p>
+            </div>
+          </div>
+
+          <div class="security-card">
+            <div class="security-header">
+              <div class="security-icon">🛡️</div>
+              <div>
+                <h4>Change Master Password</h4>
+                <p>You must provide your existing password to establish a new one.</p>
+              </div>
+            </div>
+
+            <form id="formChangePassword" class="form-stack">
+              <div class="form-group">
+                <label>Current Master Password</label>
+                <input type="password" id="inputOldPassword" class="form-input" placeholder="••••••••" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>New Master Password</label>
+                  <input type="password" id="inputNewPassword" class="form-input" placeholder="At least 6 characters" required>
+                </div>
+                <div class="form-group">
+                  <label>Confirm New Master Password</label>
+                  <input type="password" id="inputConfirmNewPassword" class="form-input" placeholder="Repeat new password" required>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Update Master Password</button>
+              </div>
+              <div class="form-message" id="changePasswordMsg"></div>
+            </form>
+          </div>
+
+          <div class="magic-box mt-4">
+            <div class="magic-box-header">
+              <span class="magic-icon">✨</span>
+              <div>
+                <h4>Permanent Lockdown (Magic Lock)</h4>
+                <p>Overcoming strong addiction: Generates a randomized, unmemorizable 32-character key and replaces your password. You will never be able to disable or delete protection on this PC.</p>
+              </div>
+            </div>
+            <button type="button" class="btn btn-magic" id="btnMagicChange">✨ Activate Permanent Magic Lock</button>
+          </div>
+
+          <div class="info-alert mt-4">
+            <strong>Permanent Lockdown Policy:</strong>
+            <p>If the Master Password is forgotten, there are NO backdoor bypasses. The only recovery route is a full system wipe/reinstallation. Ensure you memorize or securely back up your credentials.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: Threat Audit Logs -->
+      <section class="tab-pane" id="tab-logs">
+        <div class="panel card">
+          <div class="panel-header">
+            <div>
+              <h3>Threat Audit & Intercept History</h3>
+              <p class="panel-desc">All blocked content attempts, offending applications, and triggers.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" id="btnRefreshLogs">Refresh Audit</button>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Source App</th>
+                  <th>Blocked Target / Title</th>
+                  <th>Trigger Pattern</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="logsTableBody">
+                <tr><td colspan="5" class="text-center text-muted">No audit logs recorded yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: Uninstall & Deactivate -->
+      <section class="tab-pane" id="tab-deactivate">
+        <div class="panel card danger-card">
+          <div class="panel-header">
+            <div>
+              <h3 class="text-danger">Deactivation & Uninstallation Guard</h3>
+              <p class="panel-desc">Strict anti-tamper protocol: uninstallation is strictly prohibited without Master Password verification.</p>
+            </div>
+          </div>
+
+          <div class="deactivation-box">
+            <div class="deactivation-warning">
+              <span class="warning-icon">⚠️</span>
+              <div>
+                <h4>Permanent Deactivation Request</h4>
+                <p>Disabling protection restores default hosts files, clears watchdog interceptors, and leaves your device vulnerable to adult content & distraction relapses.</p>
+              </div>
+            </div>
+
+            <form id="formDeactivate" class="form-stack mt-4">
+              <div class="form-group">
+                <label>Enter Master Password to Authorize Deactivation</label>
+                <input type="password" id="inputDeactivatePassword" class="form-input" placeholder="Master Password" required>
+              </div>
+
+              <div class="button-row">
+                <button type="button" class="btn btn-danger" id="btnDeactivateShield">Temporarily Disable Protection</button>
+                <button type="button" class="btn btn-danger-outline" id="btnUninstallApp">Authorize Full Uninstallation</button>
+              </div>
+              <div class="form-message" id="deactivateMsg"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- FIRST RUN SETUP MASTER PASSWORD MODAL -->
+  <div class="modal-overlay" id="setupModal">
+    <div class="modal-box setup-box">
+      <div class="modal-badge">INITIAL CONFIGURATION</div>
+      <div class="modal-header">
+        <img src="../assets/icon.png" alt="AegisShield" class="modal-logo">
+        <h2>Set Your Master Password</h2>
+        <p>AegisShield prevents adult content access across all apps. You must set a Master Password to lock these protection rules.</p>
+      </div>
+
+      <form id="formSetupPassword" class="modal-form">
+        <div class="form-group">
+          <label>Create Master Password</label>
+          <input type="password" id="inputSetupPassword" class="form-input" placeholder="Minimum 6 characters" required autofocus>
+        </div>
+        <div class="form-group">
+          <label>Confirm Master Password</label>
+          <input type="password" id="inputSetupPasswordConfirm" class="form-input" placeholder="Re-enter password" required>
+        </div>
+
+        <div class="info-alert small">
+          <strong>Important:</strong> Without this password, you will NOT be able to close, modify, or uninstall this program. Write it down or memorize it carefully.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block mt-3">Lock Down & Enable Protection</button>
+        <div class="form-message" id="setupErrorMsg"></div>
+
+        <div class="magic-divider">
+          <span>OR FOR ABSOLUTE PERMANENT LOCK</span>
+        </div>
+        <button type="button" class="btn btn-magic btn-block" id="btnMagicSetup">✨ Magic Lock (Unbreakable Random Password)</button>
+        <p class="magic-hint">Generates an impossible-to-memorize 32-character key so you can never bypass or disable the filter.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAGIC PERMANENT LOCK CONFIRMATION MODAL -->
+  <div class="modal-overlay hidden" id="magicConfirmModal">
+    <div class="modal-box" style="border-color: rgba(168, 85, 247, 0.5);">
+      <div class="modal-header">
+        <div class="modal-icon" style="color: #c084fc;">✨</div>
+        <h3 style="color: #c084fc;">Permanent Magic Lockdown</h3>
+        <p>You are about to activate an <strong>unmemorizable 32-character random key</strong> as your Master Password.</p>
+      </div>
+      <div class="info-alert small" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
+        <strong style="color: var(--danger);">⚠️ CRITICAL WARNING:</strong>
+        <p style="color: #f8fafc; margin-top: 4px;">Once activated, you will <strong>never</strong> be able to recall this password, turn off protection, modify rules, or uninstall AegisShield. Only a full Windows OS reinstallation can remove it.</p>
+      </div>
+      <div class="modal-buttons mt-4">
+        <button type="button" class="btn btn-secondary" id="btnCancelMagic">Cancel</button>
+        <button type="button" class="btn btn-magic" id="btnConfirmMagicLock">Yes, Lock Permanently</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASSWORD PROMPT DIALOG (FOR EXIT / SENSITIVE ACTIONS) -->
+  <div class="modal-overlay hidden" id="actionAuthModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-icon">🔒</div>
+        <h3 id="authModalTitle">Master Password Required</h3>
+        <p id="authModalDesc">Enter your Master Password to authorize this sensitive action.</p>
+      </div>
+
+      <form id="formAuthAction" class="modal-form">
+        <div class="form-group">
+          <input type="password" id="inputAuthPassword" class="form-input" placeholder="••••••••" required autofocus>
+        </div>
+        <div class="modal-buttons">
+          <button type="button" class="btn btn-secondary" id="btnCancelAuth">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="btnConfirmAuth">Authorize</button>
+        </div>
+        <div class="form-message" id="authErrorMsg"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

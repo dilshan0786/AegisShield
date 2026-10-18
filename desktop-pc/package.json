@@ -1,0 +1,22 @@
+{
+  "name": "aegisshield-pc",
+  "version": "1.0.0",
+  "description": "System-Wide Adult & Explicit Content Blocker for PC with Master Password Tamper-Proofing",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "uninstall": "node engine/uninstall-guard.js"
+  },
+  "keywords": [
+    "content-filter",
+    "anti-porn",
+    "safesearch",
+    "parental-control",
+    "self-discipline"
+  ],
+  "author": "Antigravity Engineering",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^44.9.0"
+  }
+}

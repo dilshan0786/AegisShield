@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AegisShield</string>
+    <string name="accessibility_service_description">AegisShield monitors on-screen content and browser URLs to block adult and explicit pornography across all applications, and guards device settings against unauthorized tampering.</string>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Top-Right Dismiss Cut Button -->
+    <Button
+        android:id="@+id/btnDismissCover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:backgroundTint="#33FFFFFF"
+        android:text="✖ Remove Cover"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp" />
+
+    <!-- Center Content Warning -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛡️"
+            android:textSize="56sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="SCENE CONCEALED"
+            android:textColor="@color/colorSuccess"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Visuals hidden to protect against explicit content • Audio continues"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textTriggerReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#2000F2FE"
+            android:padding="10dp"
+            android:text="Detected: Adult Content Pattern"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/textSourceApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Application: Video Player"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnReturnHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Exit Player To Home"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</RelativeLayout>

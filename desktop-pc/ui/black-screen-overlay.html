@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AegisShield - Scene Cover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Top right close button */
+    .btn-dismiss {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 9999px;
+      padding: 8px 18px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+    }
+    .btn-dismiss:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.04);
+    }
+    .btn-dismiss .close-icon {
+      font-size: 1.1rem;
+      color: #ef4444;
+    }
+
+    /* Central indicator */
+    .censor-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 36px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+      animation: pulse-border 3s infinite alternate;
+    }
+
+    @keyframes pulse-border {
+      0% { border-color: rgba(0, 242, 254, 0.2); }
+      100% { border-color: rgba(16, 185, 129, 0.4); }
+    }
+
+    .shield-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.6));
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #ffffff 40%, #00f2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .hotkey-hint {
+      position: absolute;
+      bottom: 24px;
+      font-size: 0.75rem;
+      color: #64748b;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn-dismiss" id="btnDismiss">
+    <span class="close-icon">✖</span>
+    <span>Remove Black Screen</span>
+  </button>
+
+  <div class="censor-badge">
+    <div class="shield-icon">🛡️</div>
+    <h2>Smart Cinema Nudity Shield Active</h2>
+    <p>Explicit scene automatically concealed • Audio and visuals protected</p>
+    <div class="status-pill">● AUTOMATIC SCENE SENSING • AUDIO &amp; VISUAL GUARD</div>
+  </div>
+
+  <div class="hotkey-hint">Click the corner [✖ Remove Black Screen] or press [ESC] to uncover and unmute sound</div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    function closeOverlay() {
+      ipcRenderer.send('dismiss-nudity-overlay');
+    }
+
+    document.getElementById('btnDismiss').addEventListener('click', closeOverlay);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' || e.key === ' ') {
+        closeOverlay();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "name": "AegisShield Global Adult Content & Explicit Keyword Filter",
+  "lastUpdated": "2026-10-18",
+  "categories": {
+    "explicit_keywords": [
+      "porn", "porno", "pornography", "xxx", "xvideos", "xnxx", "xhamster",
+      "redtube", "youporn", "brazzers", "stripchat", "chaturbate", "onlyfans leaks",
+      "cam4", "livejasmin", "bongacams", "hentai", "javhd", "eporner", "beeg",
+      "spankbang", "tube8", "slut", "nsfw", "erotic", "adult video", "hardcore sex",
+      "fuck video", "pussy", "dick pic", "blowjob", "threesome", "orgasm",
+      "shemale", "transgender porn", "milf porn", "nude pics", "naked girls",
+      "sex tape", "webcam adult", "rule34", "boobs video", "masturbation video"
+    ],
+    "high_risk_search_patterns": [
+      "free porn", "watch porn", "sex video", "hot sex", "adult cam",
+      "leak porn", "porn hd", "pornhub", "xvideos free", "free full porn",
+      "desisex", "indian porn", "bhabhi sex", "adult movie", "nude leaks"
+    ],
+    "app_package_denylist": [
+      "com.adult.", "com.porno.", "com.sex.", "org.torproject.torbrowser"
+    ]
+  }
+}

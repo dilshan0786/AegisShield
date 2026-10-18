@@ -1,0 +1,17 @@
+{
+  "description": "SafeSearch DNS enforcement rules for major search engines and video platforms",
+  "dns_upstreams": {
+    "cloudflare_family_primary": "1.1.1.3",
+    "cloudflare_family_secondary": "1.0.0.3",
+    "cleanbrowsing_adult_primary": "185.228.168.168",
+    "cleanbrowsing_adult_secondary": "185.228.169.168",
+    "adguard_family_primary": "94.140.14.15",
+    "adguard_family_secondary": "94.140.15.16"
+  },
+  "safesearch_hosts": [
+    { "ip": "216.239.38.120", "hostname": "forcesafesearch.google.com", "targets": ["www.google.com", "google.com"] },
+    { "ip": "204.79.197.220", "hostname": "strict.bing.com", "targets": ["www.bing.com", "bing.com"] },
+    { "ip": "52.142.124.215", "hostname": "safe.duckduckgo.com", "targets": ["duckduckgo.com", "www.duckduckgo.com"] },
+    { "ip": "216.239.38.119", "hostname": "restrictmoderate.youtube.com", "targets": ["www.youtube.com", "m.youtube.com", "youtubei.googleapis.com"] }
+  ]
+}
